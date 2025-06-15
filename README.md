@@ -78,6 +78,9 @@ We have used shapley values to explain the predictions of the model. SHAP values
 ![image](https://github.com/user-attachments/assets/e51b6796-6578-46de-b011-584b2cc3b7d6)
 
 
+## 📄 License
+
+This project is licensed under the [MIT License](licence).
 
 
 ## Conclusion
