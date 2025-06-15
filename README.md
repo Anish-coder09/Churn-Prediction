@@ -138,7 +138,7 @@ Run
 
 Copy
 python churn_dashboard.py
-Access via the ngrok URL (e.g., https://xxxx.ngrok-free.app).
+Access via the ngrok URL (e.g., https://9ea0-35-231-45-36.ngrok-free.app/).
 Interact:
 Upload a CSV or enter features (e.g., tenure, contract).
 Click "Predict" to view visualizations and tables.
@@ -226,7 +226,7 @@ Copy
    - Replace the placeholder image link (`screenshots/churn_pie_chart.png`) with an actual screenshot:
      - Run the dashboard, take a screenshot of the pie chart (e.g., from the `churn-pie` graph).
      - Save it in a `screenshots/` folder in your repository.
-     - Update the link: `![Churn Risk Distribution](screenshots/churn_pie_chart.png)`.
+     - Update the link: `(https://github.com/user-attachments/assets/e2a40c22-0ab4-4d49-baf2-b44d3faa0786)`.
    - Add a `LICENSE` file and link it in the [License](#license) section.
 
 3. **Create `requirements.txt`**:
