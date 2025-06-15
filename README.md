@@ -54,6 +54,7 @@ This project provides an interactive dashboard for telecom customer churn predic
 
 Below is a sample pie chart showing the distribution of churn risk (High, Medium, Low):
 
+![image](https://github.com/user-attachments/assets/e2a40c22-0ab4-4d49-baf2-b44d3faa0786)
 
 
 *Note*: This is a placeholder image. Replace with an actual screenshot from your dashboard.
