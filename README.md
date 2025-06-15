@@ -24,7 +24,19 @@ Step 2: Select the directory
 
 Step 3: Install the required libraries
 
-   pandas ,numpy,sklearn,matplotlib,dash 
+ pandas
+
+numpy
+
+scikit-learn
+
+plotly
+
+dash
+
+dash-bootstrap-components
+
+
 
 
 
