@@ -225,9 +225,9 @@ Copy
    - Update the ngrok token placeholder with a security note.
    - Replace the placeholder image link (`screenshots/churn_pie_chart.png`) with an actual screenshot:
      - Run the dashboard, take a screenshot of the pie chart (e.g., from the `churn-pie` graph).
-     - Save it in a `screenshots/` folder in your repository.
+     
      - Update the link: `(https://github.com/user-attachments/assets/e2a40c22-0ab4-4d49-baf2-b44d3faa0786)`.
-   - Add a `LICENSE` file and link it in the [License](#license) section.
+   - Add a `LICENSE` file and link it in the [license](#license) section.
 
 3. **Create `requirements.txt`**:
    ```bash
