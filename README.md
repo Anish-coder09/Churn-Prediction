@@ -1,271 +1,87 @@
-# Churn-Prediction
-README.md
-markdown
 
-Collapse
 
-Wrap
+## What is the project about
 
-Copy
-# Customer Churn Prediction Dashboard
+Losing clients or customers is referred to as customer attrition, customer churn, customer turnover, or customer defection.
 
-A Dash-based web app for predicting customer churn using a survival analysis model. Users can upload a CSV or manually input customer features to visualize churn probability, survival/hazard functions, and feature importance.
+Because keeping an existing customer costs much less than acquiring a new one, companies that provide telephone services, Internet services, pay TV, insurance, and alarm monitoring services frequently use customer attrition analysis and customer attrition rates as one of their key business metrics. Because reclaimed long-term consumers can be worth far more to a firm than newly recruited clients, companies from these sectors frequently have customer service units that work to win back departing customers.
 
----
+And we tried to make our models more explainable using explainable AI techniques such as Partial Dependency plots and Shapley values.
 
-## Table of Contents
+By determining a customer's propensity for risk of churn, churn prediction models used in predictive analytics can forecast customer churn. These models are useful for concentrating customer retention marketing activities on the segment of the customer base that is most susceptible to churn because they produce a short prioritized list of possible defectors.
 
-- [Overview](#overview)
-- [Features](#features)
-- [Sample Visualization](#sample-visualization)
-- [Dataset](#dataset)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [Project Structure](#project-structure)
-- [Model Details](#model-details)
-- [Contributing](#contributing)
-- [License](#license)
+We wanted to conduct a customer churn analysis for this project and create a model that can forecast client attrition. Additionally, we have created a dash app that can be used to determine a customer's estimated lifetime value and the reasons why they would cancel a subscription.
 
----
+## How to run the code
 
-## Overview
+Step 1: Clone the repository
 
-This project provides an interactive dashboard for telecom customer churn prediction, built with Python's Dash and Bootstrap. It uses a pre-trained `scikit-survival` model to predict churn probabilities and visualize results. Users can input data via CSV or manual forms, with ngrok enabling public access during development.
+   (https://github.com/Anish-coder09/Churn-Prediction.git)
 
----
+Step 2: Select the directory
 
-## Features
+   (https://github.com/Anish-coder09/Churn-Prediction)
 
-- **Data Input**: Upload CSV or manually select features (e.g., tenure, contract, services).
-- **Visualizations**:
-  - Cumulative Hazard and Survival Probability graphs.
-  - Gauge chart for churn probability.
-  - Bar chart for predicted churn probabilities.
-  - Pie chart for churn risk (High, Medium, Low).
-  - Stacked bar chart for churn by tenure and contract.
-  - Feature importance chart.
-- **Tables**: All customers, risk segments, and contract stats.
-- **Responsive UI**: Built with Dash and Bootstrap.
+Step 3: Install the required libraries
 
----
+   pandas ,numpy,sklearn,matplotlib,dash 
 
-## Sample Visualization
 
-Below is a sample pie chart showing the distribution of churn risk (High, Medium, Low):
 
-![image](https://github.com/user-attachments/assets/e2a40c22-0ab4-4d49-baf2-b44d3faa0786)
+Step 5: Open the link in the browser
 
+(https://9ea0-35-231-45-36.ngrok-free.app/)
 
-*Note*: This is a placeholder image. Replace with an actual screenshot from your dashboard.
+## Final Customer Churn Prediction Flask app
 
----
+![image](https://github.com/user-attachments/assets/53145989-cae7-40a1-bf7f-4852d69b06c9)
 
-## Dataset
 
-Expected CSV columns:
+## Explainablity of the model
 
-| Column            | Description                     | Type/Values                              |
-|-------------------|---------------------------------|------------------------------------------|
-| `customerID`      | Unique ID                      | String                                   |
-| `gender`          | Gender                         | Male/Female                              |
-| `SeniorCitizen`   | Senior citizen                 | 0/1                                      |
-| `Partner`         | Has partner                    | Yes/No or 0/1                            |
-| `Dependents`      | Has dependents                 | Yes/No or 0/1                            |
-| `tenure`          | Months with company            | Integer                                  |
-| `PhoneService`    | Phone service                  | Yes/No or 0/1                            |
-| `InternetService` | Internet type                  | DSL/Fiber optic/No                       |
-| `Contract`        | Contract type                  | Month-to-month/One year/Two year         |
-| `PaymentMethod`   | Payment method                 | Electronic check/Mailed check/etc.        |
-| `MonthlyCharges`  | Monthly bill                   | Float                                    |
-| `TotalCharges`    | Total charges                  | Float                                    |
+We have compared the explainability of Random Forest Classifier and a deep learning neural network MLP Classifier. We have used SHAP values to explain the predictions of the model. SHAP values interpret the impact of having a certain value for a given feature in comparison to the prediction we'd make if that feature took some baseline value.
 
----
+We have explained and understood the Random forest model and the MultiLayerPerceptron model using explainable AI modules such as Permutation Importance, Partial Dependence plots and Shap values.
 
-## Installation
+We see that the neural net model is way more complex than the random forest model and hence it is difficult to explain the neural net model. The random forest model is much simpler and hence it is easier to explain the random forest model.
+This is due to the fact that the neural net model has a lot of hidden layers and a lot of neurons in each layer. This makes the model very complex and hence it is difficult to explain the model.
 
-1. **Clone Repository**:
-   ```bash
-   git clone https://github.com/your-username/customer-churn-prediction.git
-   cd customer-churn-prediction
-Set Up Virtual Environment:
-bash
+## Feature Importance Plots
 
-Collapse
+### MultiLayerPerceptron
 
-Wrap
+![image](https://github.com/user-attachments/assets/37bb7739-b747-4f85-9b39-d1f34818fa75)
+![image](https://github.com/user-attachments/assets/8f85e9ca-a186-4526-b35a-4137b2beb9e5)
 
-Run
 
-Copy
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-Install Dependencies:
-bash
-
-Collapse
-
-Wrap
-
-Run
-
-Copy
-pip install -r requirements.txt
-Configure ngrok:
-Get an auth token from ngrok.com.
-Update churn_dashboard.py:
-python
+### Random Forest Classifier
 
-Collapse
+![image](https://github.com/user-attachments/assets/73ae7e5c-0c4c-4826-aad6-f3bcb959f2c8)
 
-Wrap
+## Partial Dependency
 
-Run
+Partial dependence plot is used to see how churning probability changes across the range of particular feature.
+We have used partial dependency plots to understand the relationship between the target and the features. We have used the `pdpbox` library to plot the partial dependency plots.
 
-Copy
-ngrok.set_auth_token("YOUR_NGROK_AUTH_TOKEN")
-Add Model:
-Place churn_model.joblib in the project root.
-Usage
-Run the Dashboard:
-bash
+## Shapley Values
 
-Collapse
-
-Wrap
-
-Run
-
-Copy
-python churn_dashboard.py
-Access via the ngrok URL (e.g., https://9ea0-35-231-45-36.ngrok-free.app/).
-Interact:
-Upload a CSV or enter features (e.g., tenure, contract).
-Click "Predict" to view visualizations and tables.
-Dependencies
-requirements.txt:
-
-text
-
-Collapse
-
-Wrap
-
-Copy
-dash==3.0.4
-dash-bootstrap-components==2.0.3
-pyngrok==7.2.11
-pandas==2.2.2
-numpy==2.0.2
-joblib==1.5.1
-plotly==5.24.1
-scikit-survival==0.24.1
-Install:
-
-bash
-
-Collapse
-
-Wrap
-
-Run
-
-Copy
-pip install dash dash-bootstrap-components pyngrok pandas numpy joblib plotly scikit-survival
-Project Structure
-text
-
-Collapse
-
-Wrap
-
-Copy
-customer-churn-prediction/
-├── churn_dashboard.py       # Dash app script
-├── churn_model.joblib       # Pre-trained model
-├── requirements.txt         # Dependencies
-├── README.md                # Documentation
-└── .gitignore               # Git ignore
-Model Details
-Model: scikit-survival model (e.g., CoxPHSurvivalAnalysis) in churn_model.joblib.
-Features (10):
-Binary: SeniorCitizen, Partner, Dependents, OnlineSecurity, TechSupport.
-Encoded: gender (Male=1), InternetService (Fiber optic=1), Contract (Month-to-month=1), PaymentMethod (Electronic check=1).
-Continuous: tenure.
-Outputs: Survival/hazard functions, churn probability (hardcoded 0.47), lifetime value ($1480.0).
-Risk Levels: High (≥0.7), Medium (0.3–0.7), Low (<0.3).
-Note: Replace hardcoded values with actual predictions for production.
-
-Contributing
-Fork the repository.
-Create a branch: git checkout -b feature/your-feature.
-Commit: git commit -m "Add feature".
-Push: git push origin feature/your-feature.
-Open a pull request.
-License
-MIT License
-
-text
-
-Collapse
-
-Wrap
-
-Copy
----
-
-### Implementation Instructions
-
-1. **Create `README.md`**:
-   - Copy the Markdown content into `README.md` in your project root.
-   - Save using a text editor or IDE.
-
-2. **Customize**:
-   - Replace `https://github.com/your-username/customer-churn-prediction` with your GitHub repository URL.
-   - Update the ngrok token placeholder with a security note.
-   - Replace the placeholder image link (`screenshots/churn_pie_chart.png`) with an actual screenshot:
-     - Run the dashboard, take a screenshot of the pie chart (e.g., from the `churn-pie` graph).
-     
-     - Update the link: `(https://github.com/user-attachments/assets/e2a40c22-0ab4-4d49-baf2-b44d3faa0786)`.
-   - Add a `LICENSE` file and link it in the [license](#license) section.
-
-3. **Create `requirements.txt`**:
-   ```bash
-   echo -e "dash==3.0.4\ndash-bootstrap-components==2.0.3\npyngrok==7.2.11\npandas==2.2.2\nnumpy==2.0.2\njoblib==1.5.1\nplotly==5.24.1\nscikit-survival==0.24.1" > requirements.txt
-Set Up .gitignore:
-text
-
-Collapse
-
-Wrap
-
-Copy
-venv/
-__pycache__/
-*.pyc
-churn_model.joblib
-*.csv
-.env
-Push to GitHub:
-bash
-
-Collapse
-
-Wrap
-
-Run
-
-Copy
-git init
-git add README.md churn_dashboard.py requirements.txt .gitignore
-git commit -m "Add dashboard, README, and dependencies"
-git remote add origin https://github.com/your-username/customer-churn-prediction.git
-git push -u origin main
-Sample Visualization Note
-The pie chart is included as a sample because it’s a key visualization from the dashboard (showing churn risk distribution) and visually appealing for a README.
-To create the actual image:
-Run the dashboard (python churn_dashboard.py).
-Input sample data or upload a CSV.
-Take a screenshot of the pie chart (ID: churn-pie).
-Save as screenshots/churn_pie_chart.png in your repository.
-Push the image to GitHub: git add screenshots/churn_pie_chart.png.
+Shap values (SHapley Additive exPlanations) is a game theoretic approach to explain the output of any machine learning model. In below plot we can see that why a particual customer's churning probability is less than baseline value and which features are causing them.
+
+We have used shapley values to explain the predictions of the model. SHAP values interpret the impact of having a certain value for a given feature in comparison to the prediction we'd make if that feature took some baseline value. We have used the `shap` library to plot the shapley values.
+
+
+
+## Gauge Charts
+
+### MultiLayerPerceptron
+
+![image](https://github.com/user-attachments/assets/e51b6796-6578-46de-b011-584b2cc3b7d6)
+
+
+
+
+## Conclusion
+
+We have created a customer churn prediction model using Random Forest Classifier and a deep learning neural network MLP Classifier. We have used Partial Dependency plots and Shapley values to explain the predictions of the model. We have also created a Flask app that can be used to determine a customer's estimated lifetime value and the reasons why they would cancel a subscription.
+
+The final app shows churning probability, gauge chart of how severe a customer is and shap values based on customer's data. The final app layout can be seen above.
